@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{--bg:#f1f5f9;--card:#ffffff;--ink:#0f172a;--mute:#64748b;--line:#e2e8f0}
+.dark{--bg:#0b1220;--card:#131c2e;--ink:#e8eefc;--mute:#8b9ab8;--line:#1f2b44}
+html,body,#root{min-height:100%}
+body{background:var(--bg);color:var(--ink);-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;font-family:system-ui,-apple-system,"SF Pro Text",Segoe UI,Roboto,sans-serif}
+input,select,textarea{font-size:16px}
+.pb-safe{padding-bottom:max(1rem,env(safe-area-inset-bottom))}
+.pt-safe{padding-top:max(0.75rem,env(safe-area-inset-top))}
+@layer components{
+  .inp{@apply w-full rounded-xl border border-line bg-app px-3 py-3 text-ink outline-none focus:border-inv min-w-0}
+  .btn{@apply rounded-xl px-4 py-3 font-semibold active:scale-95 transition disabled:opacity-50}
+  .btn-p{@apply btn bg-inv text-white}
+  .btn-g{@apply btn border border-line text-ink}
+  .btn-d{@apply btn bg-exp/15 text-exp}
+  .lbl{@apply mb-1 block text-xs font-medium text-mute}
+}
